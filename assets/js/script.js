@@ -1,3 +1,6 @@
+// src of base code // ellsicozoun(19July2021)weather(javascript)[structure/uv index] //
+
+
 var searchBtn = $('button');
 var inputEl = $('.form-control');
 
@@ -131,7 +134,6 @@ function getUV(lon, lat){
 }
 
 //Generate the last 5 cities searched
-//Make them clickable ?
 function generateHistory(){
   $('ul').html("");
   for(i=0; i<searchHistory.length; i++){
