@@ -1,0 +1,51 @@
+:root {
+	--color1: bisque;
+	--color2: rgb(48, 39, 39);
+	--color3: rgb(209, 178, 143);
+	--color4: rgb(201, 100, 100);
+  --color5: rgb(109, 129, 82);
+  --color6: #7b1fb1;
+  --color7: rgb(65, 17, 75); 
+}
+
+*{
+    box-sizing: content-box;
+  }
+
+body {
+  background-color: var(--color3);
+  color: var(--color4);
+}  
+  
+.jumbotron {
+  background-color: var(--color2);
+  color: var(--color1);
+  padding: 5px;
+}
+
+#currentDay {
+  background-color: var(--color5);
+  color: var(--color2);
+}
+  
+.icon {
+  position: absolute;
+  margin-top: -90px;
+  margin-left:-40px;
+}
+  
+.iconSmall{
+  width: 40px;
+}
+ 
+h5 {
+  font-size: 80%;
+}
+  
+.card p{
+  font-size: 80%;
+}
+  
+.cityName{
+  padding-left:50px;
+}  
