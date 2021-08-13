@@ -3,6 +3,8 @@
 
 var searchBtn = $('button');
 var inputEl = $('.form-control');
+var timeDisplayEl = $('#time-display');
+
 
 var searchHistory = JSON.parse(localStorage.getItem("search"));
 if(!searchHistory){
@@ -10,6 +12,14 @@ if(!searchHistory){
 }else{
   generateHistory();
 }
+
+// displaying the time
+function displayDate() {
+  var currentTime = moment().format('MMMM Do YYYY, h:mm:ss');
+  timeDisplayEl.text(currentTime);
+};
+
+setInterval(displayDate, 1000);
 
 // Search Function
 // execute getWeather function then add it to the search history
@@ -24,9 +34,10 @@ function searchCity() {
 
 // Fetch the API
 function getWeather(cityName) {
-  // key 7e3a149deb7dcf451641dcd1d05f5cd5
-  var url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=7e3a149deb7dcf451641dcd1d05f5cd5";
+  var API_KEY = "62e2ac81b06789e9f89de31b469e8976";
+  var url = (`https://api.openweathermap.org/data/2.5/weather?q= + ${cityName} + &units=imperial + &appid=${API_KEY}`);
   fetch(url)
+    console.log(url)
     .then(function (response) {
       return response.json();
     })
@@ -66,7 +77,8 @@ function getWeather(cityName) {
 
 
       //Forecast for the next 5 days
-      var ForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=7e3a149deb7dcf451641dcd1d05f5cd5";
+      var API_KEY = "62e2ac81b06789e9f89de31b469e8976";
+      var ForecastUrl = (`https://api.openweathermap.org/data/2.5/forecast? + ${cityName} + &units=imperial&appid=${API_KEY}&q=${search}`);
       
       fetch(ForecastUrl)
       .then(function (response) {
@@ -101,7 +113,7 @@ function getWeather(cityName) {
 
 // Get UV index function
 function getUV(lon, lat){
-  var UVurl = "https://api.openweathermap.org/data/2.5/onecall?lat="+ lat +"&lon="+ lon +"&appid=7e3a149deb7dcf451641dcd1d05f5cd5";
+  var UVurl = (`https://api.openweathermap.org/data/2.5/onecall?lat=${lat} + &lon=${lon} + &appid=${API_KEY}`);
   fetch(UVurl)
     .then(function (response) {
       return response.json();
