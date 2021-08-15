@@ -34,17 +34,17 @@
             <!-- search API for a city by user input-->
             <div class="col-12 col-md-3">
                 <h2 class="search-header my-1">Search for a city:</h2>
-                <div class="input-group mb-3">
-                    <input type="text" id="userInput" class="form-control" placeholder="Enter a city name"
+                <form class="input-group mb-3">
+                    <input type="text" id="user-input" class="form-control" placeholder="Enter a city name"
                         aria-placeholder="Enter a city name">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="searchBtn"> Search 
-                            <i class="fas fa-search"></i> 
+                        <button class="btn btn-primary" type="submit" id="search-button"> Search
+                            <i class="fas fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </form>
 
-                <button class="btn btn-primary mb-3" type="button" id="clearHistory">Clear history</button>
+                <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 <form id="history"></form>
 
                 <!-- save and show history of recent searches -->
@@ -55,17 +55,45 @@
             <div class="col-12 col-md-8">
                 <!-- current day result for user input -->
                 <div class="row">
-                    <div class="jumbotron col-12" id="currentDay">
-                        <div class="mainResult container">
-                            <span class="cityName display-5" id="cityName"></span>                            
+                    <div class="jumbotron col-12" id="current-day">
+                        <div class="col-12 m-3 rounded">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span id="city-name" class="city-name align-middle"></span>
+                                    <img id="current-pic" src="" alt="" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="temperature" class="text-dark" placeholder="Temperature:">Temperature: </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="humidity" class="text-dark" placeholder="Humidity:">Humidity: </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="wind-speed" class="text-dark" placeholder="Wind Speed:">Wind Speed: </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex">
+                                    <p id="UV-index" class="text-dark" placeholder="UV-index:">UV-index: </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5 Days Forecast -->
-                <h4>5-Day Forecast</h4>
-                <div class="forecast row justify-content-around card-deck">
+
+                <div class="mt-4 col-md-12">
+                    <h4 id="forecaseH4" class="mt-3 hide">5-Day Forecast:</h4>
+                    <div id="five-day" class="forecast row justify-content-around card-deck"></div>
                 </div>
+
             </div>
         </section>
 

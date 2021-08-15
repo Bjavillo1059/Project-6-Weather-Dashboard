@@ -59,4 +59,19 @@ When a User inputs a city into the input field
     - blank input will display under history 
 
 - input of city will display a 5-day forecast
-    - 
+
+## Miscellaneous note
+
+- NEEDS A LOT OF WORK! needs styling updates, needs functions, API query's are broken
+
+- HTML and Javascript console log detections are 50% checking.
+
+- need to fix card styling and use of bootstrap.
+
+- need to fix the use of Jquery
+
+- UV index function is not written.
+
+- icon img is displaying with console log detection, but will not display; syntax incomplete will look into further
+
+- assignment turn in is late, but am submitting for comments and will resubmit with future updates

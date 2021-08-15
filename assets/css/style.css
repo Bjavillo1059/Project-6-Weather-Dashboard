@@ -20,10 +20,10 @@ body {
 .jumbotron {
   background-color: var(--color2);
   color: var(--color1);
-  padding: 5px;
+  padding: 0px 12px;
 }
 
-#currentDay {
+#current-day {
   background-color: var(--color5);
   color: var(--color2);
 }
